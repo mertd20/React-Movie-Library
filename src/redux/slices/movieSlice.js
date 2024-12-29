@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API_KEY = "b5a0a1c4";
+const API_KEY = "yourapikey";
 
 export const getData = createAsyncThunk("movie/getData", async (movie = "marvel") => {
   try {
