@@ -7,7 +7,7 @@ const initialState = {
 };
 
 export const getData = createAsyncThunk("getData", async (movieName) => {
-  const apiKey = "b5a0a1c4";
+  const apiKey = "yourapikey";
   const url = `http://www.omdbapi.com/?s=${movieName}&apikey=${apiKey}`;
   const response = await axios.get(url);
   return response.data.Search;
