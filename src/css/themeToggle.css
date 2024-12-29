@@ -1,0 +1,105 @@
+.theme-toggle-btn {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  padding: 4px;
+  border: none;
+  border-radius: 25px;
+  background: var(--bs-surface);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+  border: 1px solid var(--bs-border);
+}
+
+.icon-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.sun-icon, .moon-icon {
+  font-size: 18px;
+  z-index: 1;
+}
+
+.sun-icon {
+  color: #ffd43b;
+  margin-left: 2px;
+}
+
+.moon-icon {
+  color: #7c8187;
+  margin-right: 2px;
+}
+
+.slider {
+  position: absolute;
+  top: 4px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.slide-light {
+  left: 4px;
+}
+
+.slide-dark {
+  left: 44px;
+}
+
+/* Hover efektleri */
+.theme-toggle-btn:hover {
+  transform: scale(1.02);
+}
+
+.theme-toggle-btn:hover .slider {
+  box-shadow: 0 0 10px var(--bs-primary);
+}
+
+/* Dark mode özellikleri */
+body.dark-mode .theme-toggle-btn {
+  background: var(--bs-dark-surface);
+}
+
+body.dark-mode .moon-icon {
+  color: #f1c40f;
+}
+
+body.dark-mode .sun-icon {
+  color: #7c8187;
+}
+
+/* Aktif durum animasyonu */
+.theme-toggle-btn:active .slider {
+  transform: scale(0.95);
+}
+
+/* Responsive tasarım */
+@media (max-width: 768px) {
+  .theme-toggle-btn {
+    width: 70px;
+    height: 35px;
+  }
+  
+  .slider {
+    width: 27px;
+    height: 27px;
+  }
+  
+  .slide-dark {
+    left: 39px;
+  }
+  
+  .sun-icon, .moon-icon {
+    font-size: 16px;
+  }
+} 
